@@ -3,8 +3,12 @@ package institution;
 import person.Student;
 
 public class University {
+
+    String name;
+    ArrayList<Student> students = new ArrayList<Student>();
+
     public University(String name) {
-        //TODO: Implementation is needed
+        this.name = name;
     }
 
     public void setStudent(Student student) {
@@ -12,6 +16,6 @@ public class University {
     }
 
     public void addStudent(Student student) {
-        //TODO: Implementation is needed
+        students.add(student);
     }
 }
