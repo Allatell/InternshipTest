@@ -7,8 +7,9 @@ public class Student {
     String name;
     Knowledge knowledge;
 
-    public Student(String name) {
+    public Student(String name, int knowledgeLevel) {
         this.name = name;
+        this.setKnowledge(new Knowledge(knowledgeLevel));
     }
 
     public String getName() {

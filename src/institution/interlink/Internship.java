@@ -1,5 +1,6 @@
 package institution.interlink;
 
+import institution.University;
 import person.Student;
 
 import java.util.ArrayList;
@@ -7,7 +8,6 @@ import java.util.ArrayList;
 public class Internship {
 
     String name;
-
     ArrayList<Student> students = new ArrayList<>();
 
     public Internship(String name) {
@@ -18,11 +18,16 @@ public class Internship {
         students.add(student);
     }
 
-    public String getStudents() {
-        String students = new String();
-        for (Student student:this.students) {
-            students.concat(student.getName()+" ");
+    public ArrayList<Student> getStudents() {
+        return this.students;
+    }
+
+    public void addStudentsFromUniversity(University university){
+        ArrayList<Student> universityStudents =  university.getStudents();
+        for (Student student:universityStudents) {
+            if (student.getKnowledge().getLevel()>university.getKnowledgeLevel()){
+                setStudent(student);
+            }
         }
-        return students;
     }
 }

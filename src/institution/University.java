@@ -7,20 +7,31 @@ import java.util.ArrayList;
 public class University {
 
     String name;
-    long knowledgeLevel;
-    ArrayList<Student> students = new ArrayList<Student>();
+    int knowledgeLevel;
+    ArrayList<Student> students = new ArrayList<>();
 
     public University(String name) {
         this.name = name;
-        this.knowledgeLevel = 0;
-    }
-
-    public void setStudent(Student student) {
-
     }
 
     public void addStudent(Student student) {
         students.add(student);
-        this.knowledgeLevel = this.knowledgeLevel+student.getKnowledge().getLevel();
+        updateKnowledgeLevel(student.getKnowledge().getLevel());
+    }
+
+    public ArrayList<Student> getStudents() {
+        return students;
+    }
+
+    public float getKnowledgeLevel(){
+        return knowledgeLevel;
+    }
+
+    public void updateKnowledgeLevel(int studentKnowledgeLevel) {
+        if (students.size()==1) this.knowledgeLevel = studentKnowledgeLevel;
+        else {
+            this.knowledgeLevel += studentKnowledgeLevel;
+            this.knowledgeLevel = this.knowledgeLevel/2;
+        }
     }
 }
