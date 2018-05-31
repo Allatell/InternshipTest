@@ -4,8 +4,8 @@ import person.consciousness.Knowledge;
 
 public class Student {
 
-    String name;
-    Knowledge knowledge;
+    private String name;
+    private Knowledge knowledge;
 
     public Student(String name, int knowledgeLevel) {
         this.name = name;

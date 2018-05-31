@@ -7,8 +7,8 @@ import java.util.ArrayList;
 
 public class Internship {
 
-    String name;
-    ArrayList<Student> students = new ArrayList<>();
+    private String name;
+    private ArrayList<Student> students = new ArrayList<>();
 
     public Internship(String name) {
         this.name = name;

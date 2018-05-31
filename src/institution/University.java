@@ -6,9 +6,9 @@ import java.util.ArrayList;
 
 public class University {
 
-    String name;
-    int knowledgeLevel;
-    ArrayList<Student> students = new ArrayList<>();
+    private String name;
+    private int knowledgeLevel;
+    private ArrayList<Student> students = new ArrayList<>();
 
     public University(String name) {
         this.name = name;
