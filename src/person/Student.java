@@ -11,7 +11,15 @@ public class Student {
         this.name = name;
     }
 
+    public String getName() {
+        return name;
+    }
+
     public void setKnowledge(Knowledge knowledge) {
         this.knowledge = knowledge;
+    }
+
+    public Knowledge getKnowledge() {
+        return knowledge;
     }
 }
