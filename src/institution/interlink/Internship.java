@@ -14,8 +14,10 @@ public class Internship {
         this.name = name;
     }
 
-    public void setStudent(Student student) {
-        students.add(student);
+    public void setStudent(Student student, University university) {
+        if (student.getKnowledge().getLevel()>university.getKnowledgeLevel()) {
+            students.add(student);
+        }
     }
 
     public ArrayList<Student> getStudents() {
@@ -25,9 +27,7 @@ public class Internship {
     public void addStudentsFromUniversity(University university){
         ArrayList<Student> universityStudents =  university.getStudents();
         for (Student student:universityStudents) {
-            if (student.getKnowledge().getLevel()>university.getKnowledgeLevel()){
-                setStudent(student);
-            }
+            setStudent(student, university);
         }
     }
 }
